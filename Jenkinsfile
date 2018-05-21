@@ -69,7 +69,7 @@ node('testing') {
 
     stage('Cleanup'){
 
-         echo 'cleanup'
+         echo 'cleanup data'
         
         //  mail body: 'project build successful',
         //              from: 'xxxx@yyyyy.com',
