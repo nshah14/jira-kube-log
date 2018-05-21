@@ -31,10 +31,10 @@ node('testing') {
     // }
       stage('Install Docker on Centos node'){
         echo 'Building docker image'
-        sh 'sudo yum install docker'
-        sh 'sudo yum remove docker docker-common docker-selinux docker-engine'
-        sh 'sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo'
-        sh 'sudo yum install docker-ce'
+        // sh 'sudo yum install docker'
+        // sh 'sudo yum remove docker docker-common docker-selinux docker-engine'
+        // sh 'sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo'
+        // sh 'sudo yum install docker-ce'
            /**
                
                docker-machine env
@@ -47,10 +47,10 @@ node('testing') {
 
     stage('Build Docker'){
         echo 'Building docker image'
-           
+        
                
         // sh 'docker-machine env'
-        sh ' sudo docker build -t nshah/jira-time-log .'
+        sh ' sudo docker build -t nshah/jira-kube-log .'
         // sh 'eval $(docker-machine env)'
         // sh 'docker build -t nshah/piglatin .'
         
@@ -59,12 +59,12 @@ node('testing') {
 
     stage('Deploy'){
 
-         echo 'Push to Repo'
-         /**
-            docker run -p 3000:3000 -d nshah/piglatin
-         */
+         echo 'Run docker image'
+         sh 'sudo docker run -p 3001:3001 -d nshah/jira-time-log'
+         sh 'sudo wget 127.0.0.1:3001/'
 
     }
+
 
     stage('Cleanup'){
 
