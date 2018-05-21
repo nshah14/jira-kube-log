@@ -60,7 +60,7 @@ node('testing') {
     stage('Deploy'){
 
          echo 'Run docker image'
-         sh 'sudo docker run -p 3001:3001 -d nshah/jira-time-log'
+         sh 'sudo docker run -p 3001:3001 -d nshah/jira-kube-log'
          sh 'sudo wget 127.0.0.1:3001/'
 
     }
