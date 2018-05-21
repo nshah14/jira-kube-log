@@ -1,0 +1,45 @@
+
+<div class="results" *ngIf="(project.issues.length == issues.length)">
+    <!-- {{project.issues.length}} and {{issues.length}} -->
+        <input class="button"  [disabled]="isDisableExport" type="submit" value="Export To CSV" (click)="exportToCsv()">
+        <!-- <div *ngIf="issues">
+                <input class="button"  [disabled]="isDisableExport" type="submit" value="Export To CSV" (click)="exportToCsv()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>User Who logged the time</th>
+                        <th>How much Time logged</th>
+                        <th>Start of log entry</th>
+                        <th>Label(s)</th>
+                        <th>Created</th>
+                        <th>Updated</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let issue of issues">
+                    <tr *ngIf="issue.work ==  0">
+                        <td colspan="1">
+                            {{issue.key}}
+                        </td>
+                       
+                        <td colspan="6">No Work Log For The Issue</td>
+                    </tr>
+                    <tr *ngFor="let worklog of issue.worklogs">
+                    <td>{{worklog.key}}</td>
+                    <td>{{worklog.name}}</td>
+                    <td>{{worklog.timespent}}</td>
+                    <td>{{worklog.started}}</td>
+                    <td>{{worklog.labels}}</td>
+                    <td>{{worklog.created}}</td>
+                    <td>{{worklog.updated}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+     
+</div>
+<div *ngIf="(project.issues.length > issues.length)">
+        <label>Loading issues data.............</label>
+    </div>
+
+    <router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web
+  labels:
+    name: web
+    app: jira-app
+spec:
+  selector:
+    name: web 
+  type: NodePort
+  ports:
+   - port: 3003
+     nodePort: 30000

@@ -1,0 +1,41 @@
+<!-- <div> -->
+    
+    <div class="content">
+            <!-- <div *ngIf="msg">{{msg}}</div> -->
+        <table>
+            <thead>
+                
+                <tr>
+                    <td>
+                        <Label> user name* : </Label>
+                    </td>
+                    <td>
+                        <input  class="form-control"  type="text" id="name" name="name" placeholder="Type  user name here..." [(ngModel)]="name">
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td>
+                        <Label>User surname* : </Label>
+                    </td>
+                    <td>
+                        <input required type="text" id="surname" name="surname" placeholder="Type  sur-name here..." [(ngModel)]="surname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="button"  [disabled]="isSubmit" type="submit" value="Submit" (click)="insert(name, surname)"  (ngModelChange)="notify($event)">
+                    </td>
+                   
+                </tr>
+                <tr>
+                    <td>
+                       
+                   
+                        <Label>{{msg}}</Label> 
+                    </td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>

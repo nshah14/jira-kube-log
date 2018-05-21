@@ -1,0 +1,61 @@
+table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: center;
+    }
+select{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+label{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+input{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+input.button{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+tr{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+
+}
+td{
+    float: left;
+    width: 50%;
+    height: 100%; 
+    text-align: center;
+
+    }
+#page
+    {
+        width: 100%;
+        height: 1000px;
+        position: relative;
+        
+    }
+.content{
+    /* width: 100%;
+    height: 100%; */
+    float: center;
+    margin-left:20%;
+    margin-right:20%;
+}
+.tmp{
+    border:solid blue 2px;
+}
+.warning{
+    font-style: italic;
+    font-size: 15px;
+    color: red;
+}

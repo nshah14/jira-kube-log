@@ -1,0 +1,67 @@
+<!-- <div> -->
+    
+    <div class="content">
+            <!-- <div *ngIf="msg">{{msg}}</div> -->
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <Label>Jira Server url* : </Label>
+                    </td>
+                    <td>
+                        <!-- <input type="text" id="url" name="url" placeholder="Type jira url here..." [(ngModel)]="url"> -->
+                        <select   id="url" name="url" [(ngModel)]="url">
+                                <option value="jira.apt.fs.fujitsu.com/jira">jira.apt.fs.fujitsu.com/jira</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Label>Jira user name* : </Label>
+                    </td>
+                    <td>
+                        <input  class="form-control"  type="text" id="user" name="user" placeholder="Type jira user name here..." [(ngModel)]="user">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Label>Jira password* : </Label>
+                    </td>
+                    <td>
+                        <input required type="password" id="password" name="password" placeholder="Type jira password here..." [(ngModel)]="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Label>Jira Project* : </Label>
+                    </td>
+                    <td>
+                        <input required type="text" id="projectKey" name="projectKey" placeholder="Type jira project name here..." [(ngModel)]="projectKey">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="button"  [disabled]="isSubmit" type="submit" value="Submit" (click)="login(url, user, password)"  (ngModelChange)="notify($event)">
+                    </td>
+                    <td>
+                        <input class="button"  [disabled]="isReset" type="submit" value="Reload" click="reload()">
+                    </td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+<!-- </div> -->
+<div class="tmp" *ngIf="project">
+        <jira-time [project]="project"></jira-time>
+</div>
+<div class="tmp" *ngIf="isLoading">
+        <label>Loading project issues...</label>
+</div>
+<div class="warning" *ngIf="msg && !isLoading && !isError">
+        <label>{{msg}}</label>
+</div>
+<div class="warning" *ngIf="isError && !isLoading">
+        <label>{{errorMessage}}</label>
+</div>
+<router-outlet></router-outlet>
