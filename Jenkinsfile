@@ -29,7 +29,7 @@ node('testing') {
                
     //        */ 
     // }
-      stage('Install Docker on Centos node'){
+    stage('Install Docker on Centos node'){
         echo 'Building docker image'
         // sh 'sudo yum install docker'
         // sh 'sudo yum remove docker docker-common docker-selinux docker-engine'
@@ -52,7 +52,7 @@ node('testing') {
         sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
         // sh 'sudo docker rmi $(sudo docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
-        sh ' sudo docker build -t nshah/jira-kube-log .'
+        sh 'sudo docker build -t nshah/jira-kube-log .'
         // sh 'eval $(docker-machine env)'
         // sh 'docker build -t nshah/piglatin .'
         
