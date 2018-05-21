@@ -48,7 +48,7 @@ node('testing') {
     stage('Build Docker'){
         echo 'Building docker image'
         // sh 'sudo docker stop $(docker ps -q)'
-        sh 'sudo docker rm $(sudo docker ps -a -q)'
+        // sh 'sudo docker rm $(sudo docker ps -a -q)'
         sh 'sudo docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi'
         // sh 'sudo docker rmi $(sudo docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
