@@ -47,8 +47,9 @@ node('testing') {
 
     stage('Build Docker'){
         echo 'Building docker image'
-        
-               
+        sh 'sudo docker stop $(docker ps -q)'
+        sh 'sudo docker rm $(docker ps -a -q)'
+        sh 'sudo docker rmi $(docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
         sh ' sudo docker build -t nshah/jira-kube-log .'
         // sh 'eval $(docker-machine env)'
@@ -61,7 +62,6 @@ node('testing') {
 
          echo 'Run docker image'
          sh 'sudo docker run -p 3003:3003 -d nshah/jira-kube-log'
-         sh 'sudo wget 127.0.0.1:3003/'
 
     }
 
