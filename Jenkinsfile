@@ -80,7 +80,7 @@ node('testing') {
 
     stage('Test'){
 
-         env.NODE_ENV = "test"
+        //  env.NODE_ENV = "test"
 
          print "Environment will be : ${env.NODE_ENV}"
           /** for running the jasmine test.
