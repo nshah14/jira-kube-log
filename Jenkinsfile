@@ -68,26 +68,26 @@ node('testing') {
     }
 
 
-    stage('Cleanup'){
+    // stage('Cleanup'){
 
-         echo 'cleanup data'
+    //      echo 'cleanup data'
         
-        //  mail body: 'project build successful',
-        //              from: 'xxxx@yyyyy.com',
-        //              replyTo: 'xxxx@yyyy.com',
-        //              subject: 'project build successful',
-        //              to: 'yyyyy@yyyy.com'
-    }
+    //     //  mail body: 'project build successful',
+    //     //              from: 'xxxx@yyyyy.com',
+    //     //              replyTo: 'xxxx@yyyy.com',
+    //     //              subject: 'project build successful',
+    //     //              to: 'yyyyy@yyyy.com'
+    // }
 
 
-    stage('Test'){
+    // stage('Test'){
 
-        //  env.NODE_ENV = "test"
+    //     //  env.NODE_ENV = "test"
 
-         print "Environment will be : ${env.NODE_ENV}"
-          /** for running the jasmine test.
-            jasmine
-          */
+    //      print "Environment will be : ${env.NODE_ENV}"
+    //       /** for running the jasmine test.
+    //         jasmine
+    //       */
 
-    }
+    // }
 }
