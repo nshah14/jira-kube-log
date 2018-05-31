@@ -48,9 +48,9 @@ node('testing') {
 
     stage('Build Docker'){
         echo 'Building docker image'
-        // sh 'sudo docker stop $(sudo docker ps -q)'
-        // sh 'sudo docker rm $(sudo docker ps -a -q)'
-        // sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
+        sh 'sudo docker stop $(sudo docker ps -q)'
+        sh 'sudo docker rm $(sudo docker ps -a -q)'
+        sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
         // sh 'sudo docker rmi $(sudo docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
         sh 'sudo docker build -t nshah/jira-kube-log .'
@@ -63,7 +63,7 @@ node('testing') {
     stage('Update image registry')
     {
         // sh 'sudo docker login'
-        sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8213/naved/jira-kube-log'
+        sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8213/nshah/jira-kube-log'
         sh 'sudo docker push  62.60.42.82:8213/nshah/jira-kube-log'
     }
 
