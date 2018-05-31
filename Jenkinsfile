@@ -62,7 +62,7 @@ node('testing') {
 
     stage('Update image registry')
     {
-        sh 'sudo docker login'
+        // sh 'sudo docker login'
         sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8213/naved/jira-kube-log'
         sh 'sudo docker push  62.60.42.82:8213/nshah/jira-kube-log'
     }
