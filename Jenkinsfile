@@ -71,7 +71,7 @@ node('testing') {
 
          echo 'Run docker image'
         //  sh 'sudo docker run -p 3003:3003 -d nshah/jira-kube-log'
-         sh ' kubectl create -f web-pod.yml'
+        //  sh ' kubectl create -f web-pod.yml'
          
 
     }
