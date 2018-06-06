@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web-time
-          image: 62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER}
+          image: 62.60.42.82:8123/nshah/jira-kube-log_{{BUILD_NUMBER}}
           ports:
             - containerPort: 3003
               name: http

@@ -48,8 +48,8 @@ node('deploy'){
 
          echo 'Run docker image'
         //  sh 'sudo docker run -p 3003:3003 -d nshah/jira-kube-log'
-         sh ' kubectl create -f webtime-pod.yml'
-         sh ' kubectl create -f webtime-svc.yml'
+         sh ' kubectl create -f webtime-pod.yml --BUILD_NUMBER=${BUILD_NUMBER}'
+         sh ' kubectl create -f webtime-svc.yml --BUILD_NUMBER=${BUILD_NUMBER}'
          sh ' kubectl create -f webtime-rc.yml'
     }
 
