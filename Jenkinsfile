@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 node('build') {
     stage( 'Intializing')
     {
