@@ -8,6 +8,7 @@ metadata:
 spec:
   containers:
     - name: web
-      image: index.docker.io/shahnavedali/jira-app
+      # image: index.docker.io/shahnavedali/jira-app
+      image: 62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER}
       ports:
         - containerPort: 3003
