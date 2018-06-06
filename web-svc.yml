@@ -1,13 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: web
+  name: web-time
   labels:
-    name: web
-    app: jira-app
+    name: web-time
+    app: jira-app-time
 spec:
   selector:
-    name: web 
+    name: web-time 
   type: NodePort
   ports:
    - port: 3003
