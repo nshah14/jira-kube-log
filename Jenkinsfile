@@ -37,6 +37,13 @@ node('build') {
     }
 }
 node('deploy'){
+    stage('Checkout'){
+       
+       echo 'Getting source code'
+       checkout scm
+    
+    }
+
     stage('Deploy'){
 
          echo 'Run docker image'
