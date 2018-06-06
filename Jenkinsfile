@@ -53,7 +53,7 @@ node('dev') {
         // sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
         // sh 'sudo docker rmi $(sudo docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
-        sh 'sudo docker build -t nshah/jira-kube-log .'
+        // sh 'sudo docker build -t nshah/jira-kube-log .'
         // sh 'eval $(docker-machine env)'
         // sh 'docker build -t nshah/piglatin .'
         
@@ -63,7 +63,7 @@ node('dev') {
     stage('Update image registry')
     {
         // sh 'sudo docker login'
-        sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8123/nshah/jira-kube-log'
+        // sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8123/nshah/jira-kube-log'
         sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log'
     }
 
