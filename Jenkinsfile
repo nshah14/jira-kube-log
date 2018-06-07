@@ -53,7 +53,7 @@ node('deploy'){
         //  sh 'kubectl edit configmap special-config --from-literal=BUILD_NUMBER=${BUILD_NUMBER} '
          sh '''
             msg=$(kubectl describe rc  2>&1)
-            if $msg = ""; then
+            if $msg == ""; then
                 echo 'no pod existing'
             else
                 kubectl delete -f webtime-rc.yml
