@@ -51,7 +51,7 @@ node('deploy'){
          echo 'Run docker image'
         //  sh 'sudo docker run -p 3003:3003 -d nshah/jira-kube-log'
         //  sh 'kubectl edit configmap special-config --from-literal=BUILD_NUMBER=${BUILD_NUMBER} '
-         sh ' msg=$(kubectl delete -f webtime-rc.yml)'
+         sh ' msg=$(kubectl delete -f webtime-rc.yml 2>&1)'
          sh ' echo $msg'
          sh ' kubectl delete -f webtime-svc.yml'
          sh ' kubectl create -f webtime-pod.yml '
