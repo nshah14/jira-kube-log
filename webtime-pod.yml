@@ -8,16 +8,10 @@ metadata:
 spec:
   containers:
     - name: web-time
+      env:
+        - name: BUILD_NUMBER
+          value: ${BUILD_NUMBER}
       # image: index.docker.io/shahnavedali/jira-app
       image: 62.60.42.82:8123/nshah/jira-kube-log_{{BUILD_NUMBER}}
       ports:
         - containerPort: 3003
-      env:
-           # Define the environment variable
-           - name: SPECIAL_LEVEL_KEY
-             valueFrom:
-               configMapKeyRef:
-                 # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
-                 name: special-config
-                 # Specify the key associated with the value
-                 key: BUILD_NUMBER
