@@ -35,6 +35,7 @@ node('build') {
         //docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
         sh 'sudo docker tag nshah/jira-kube-log:latest 62.60.42.82:8123/nshah/jira-kube-log:${BUILD_NUMBER}'
         sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log:${BUILD_NUMBER}'
+        sh 'sudo docker tag 62.60.42.82:8123/nshah/jira-kube-log:${BUILD_NUMBER} 62.60.42.82:8123/nshah/jira-kube-log:latest'
         sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log:latest'
     }
 }
