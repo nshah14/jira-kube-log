@@ -32,8 +32,10 @@ node('build') {
     stage('Update image registry')
     {
         // sh 'sudo docker login'
-        sh 'sudo docker tag nshah/jira-kube-log 62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER}'
+        //docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
+        sh 'sudo docker tag nshah/jira-kube-log_${BUILD_NUMBER} 62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER} 62.60.42.82:8123/nshah/jira-kube-log:latest '
         sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER}'
+        sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log:latest'
     }
 }
 node('deploy'){
