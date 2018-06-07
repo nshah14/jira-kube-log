@@ -58,7 +58,6 @@ node('deploy'){
           else
             kubectl delete -f webtime-rc.yml
             kubectl delete -f webtime-svc.yml           
-          EOF
           '''
 
         //  sh ' msg=$(kubectl delete -f webtime-rc.yml 2>&1)'
