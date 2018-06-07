@@ -22,7 +22,7 @@ node('build') {
         // sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
         // sh 'sudo docker rmi $(sudo docker images -q -f dangling=true)'  
         // sh 'docker-machine env'
-        sh 'sudo docker build -t nshah/jira-kube-log_${BUILD_NUMBER} .'
+        sh 'sudo docker build -t nshah/jira-kube-log .'
         // sh 'eval $(docker-machine env)'
         // sh 'docker build -t nshah/piglatin .'
         
@@ -33,9 +33,9 @@ node('build') {
     {
         // sh 'sudo docker login'
         //docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
-        sh 'sudo docker tag nshah/jira-kube-log_${BUILD_NUMBER} 62.60.42.82:8123/nshah/jira-kube-log:latest '
-        sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log_${BUILD_NUMBER}'
-        sh 'sudo docker push  62.60.42.82:8123/nshah/jira-kube-log:latest'
+        sh 'sudo docker tag nshah/jira-kube-log:latest nshah/jira-kube-log:${BUILD_NUMBER}'
+        sh 'sudo docker push  nshah/jira-kube-log:${BUILD_NUMBER}'
+        sh 'sudo docker push  nshah/jira-kube-log:latest'
     }
 }
 node('deploy'){
