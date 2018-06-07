@@ -9,6 +9,6 @@ spec:
   containers:
     - name: web-time
       # image: index.docker.io/shahnavedali/jira-app
-      image: 62.60.42.82:8123/nshah/jira-kube-log:latest
+      image: 62.60.42.82:8123/nshah/jira-kube-log
       ports:
         - containerPort: 3003
