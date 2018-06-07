@@ -54,10 +54,11 @@ node('deploy'){
          sh '''
           msg=$(kubectl describe rc  2>&1)
           if $msg = 'the server doesn't have a resource type "web-time"'; then
-            echo 'no pod existing'
+            echo "no pod existing"
           else
             kubectl delete -f webtime-rc.yml
             kubectl delete -f webtime-svc.yml           
+          EOF
           '''
 
         //  sh ' msg=$(kubectl delete -f webtime-rc.yml 2>&1)'
