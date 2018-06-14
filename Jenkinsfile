@@ -66,7 +66,7 @@ node('deploy'){
     {
         
         def time = '300' //params.SLEEP_TIME_IN_SECONDS
-        echo "Waiting ${SLEEP_TIME_IN_SECONDS} seconds for deployment to complete prior starting smoke testing"
+        echo "Waiting 300 seconds for deployment to complete prior starting smoke testing"
         sleep time.toInteger() // seconds
 
         //  sh ' msg=$(kubectl delete -f webtime-rc.yml 2>&1)'
