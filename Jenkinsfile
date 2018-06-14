@@ -47,7 +47,7 @@ node('deploy'){
     
     }
 
-    stage('Deploy'){
+    stage('Delete Existing Deployment'){
 
          echo 'Run docker image'
         //  sh 'sudo docker run -p 3003:3003 -d nshah/jira-kube-log'
@@ -61,6 +61,13 @@ node('deploy'){
                 kubectl delete -f webtime-svc.yml
             fi
          '''
+    }
+    stage('Deploy fresh code')
+    {
+        
+        def time = '300' //params.SLEEP_TIME_IN_SECONDS
+        echo "Waiting ${SLEEP_TIME_IN_SECONDS} seconds for deployment to complete prior starting smoke testing"
+        sleep time.toInteger() // seconds
 
         //  sh ' msg=$(kubectl delete -f webtime-rc.yml 2>&1)'
         //  sh ' echo $msg'
