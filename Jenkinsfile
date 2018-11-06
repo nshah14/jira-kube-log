@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-node('build') {
+node('deploy') {
     stage( 'Intializing')
     {
         echo 'Intializing ...'
