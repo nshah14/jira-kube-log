@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java-service
+  labels:
+    name: web-time
+    app: jira-app-time
+spec:
+  containers:
+    - name: web-time
+      # image: index.docker.io/shahnavedali/jira-app
+      image:  62.60.42.82:8123/nshah/jira-kube-log
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 3003
+  imagePullSecrets:
+    - name: regcred
